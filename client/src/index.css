@@ -1,0 +1,829 @@
+/* Google Font - Outfit */
+:root {
+  --font-family: 'Outfit', sans-serif;
+  --bg-light: #fffcf8;
+  --text-dark: #1e1e24;
+  --primary-red: #c92c2c;
+  --accent-orange: #ff5722;
+  --accent-green: #4cd964;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --card-border: 1px solid #f1ece8;
+  --rainbow-gradient: linear-gradient(90deg, #ff3b30 0%, #ff9500 50%, #4cd964 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Page wrapper */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Glassmorphism Login Background & Container */
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #251213 0%, #110506 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(38, 24, 25, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.login-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e5c7c0;
+  margin-bottom: 20px;
+}
+
+.login-card h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.login-card p.subtitle {
+  color: #bfaaa6;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e5c7c0;
+  margin-bottom: 8px;
+}
+
+.login-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.login-error {
+  background: rgba(184, 50, 50, 0.25);
+  border: 1px solid rgba(184, 50, 50, 0.4);
+  border-radius: 10px;
+  color: #ff9b9b;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Button & UI Gradients */
+.btn-rainbow {
+  width: 100%;
+  background: var(--rainbow-gradient);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-rainbow:hover {
+  opacity: 0.95;
+}
+
+.btn-rainbow:active {
+  transform: scale(0.99);
+}
+
+.login-toggle {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #bfaaa6;
+}
+
+.login-toggle span {
+  color: #ffd275;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+/* Home Redesign Layout */
+.home-header {
+  margin-bottom: 32px;
+}
+
+.home-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.home-title {
+  color: var(--primary-red);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.home-subtitle {
+  color: #6e6b68;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #e1dbd5;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #55524f;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #f7f5f2;
+}
+
+.btn-cart-badge {
+  background: #fffcf8;
+  border: 1px solid #ffdcd6;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-orange);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.05);
+}
+
+.btn-cart-badge:hover {
+  background: #fff5f2;
+}
+
+.btn-logout-gradient {
+  background: var(--rainbow-gradient);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-logout-gradient:hover {
+  opacity: 0.95;
+}
+
+/* Search and Filters */
+.search-filter-row {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #eedfd3;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 15px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ffaa95;
+}
+
+.filter-select {
+  border: 1px solid #eedfd3;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 15px;
+  background: #ffffff;
+  color: #333;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+}
+
+/* Category Filter Tabs */
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.category-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #eedfd3;
+  color: #55524f;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.category-tab.active {
+  background: #ff5511;
+  color: #ffffff;
+  border-color: #ff5511;
+  box-shadow: 0 4px 12px rgba(255, 85, 17, 0.2);
+}
+
+.category-tab:hover:not(.active) {
+  background: #fff6f3;
+  border-color: #ffbead;
+}
+
+/* Restaurant Cards Grid */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.restaurant-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #f0ebe4;
+  overflow: hidden;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.restaurant-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.restaurant-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.restaurant-rating {
+  background: #e8f7ec;
+  color: #0f8b34;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.restaurant-location {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d15a28;
+  margin-bottom: 8px;
+}
+
+.restaurant-desc {
+  font-size: 13px;
+  color: #6e6b68;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.restaurant-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #c92c2c;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* Cart Page Split Layout */
+.cart-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cart-title-row h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-red);
+}
+
+.cart-title-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cart-item-count {
+  font-size: 15px;
+  color: #6e6b68;
+  margin-bottom: 20px;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cart Items Card */
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item-card {
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.cart-item-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #eae2db;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cart-item-restaurant {
+  font-size: 13px;
+  color: #8c8882;
+  margin-top: 2px;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b9e3a;
+  margin-top: 4px;
+}
+
+.cart-item-controls-price {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.quantity-controller {
+  display: flex;
+  align-items: center;
+  background: #f7f5f2;
+  border: 1px solid #e5dfd8;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.quantity-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-value {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 8px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cart-item-total-col {
+  text-align: right;
+  min-width: 90px;
+}
+
+.cart-item-subtotal {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cart-item-remove {
+  background: none;
+  border: none;
+  color: var(--primary-red);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+
+/* Coupon Box */
+.coupon-section {
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.coupon-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.coupon-input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.coupon-input {
+  flex-grow: 1;
+  border: 1px solid #eedfd3;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.coupon-input:focus {
+  outline: none;
+  border-color: #ffaa95;
+}
+
+.btn-apply {
+  background: var(--rainbow-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Available Offers list */
+.offers-section {
+  background: #faf7ff;
+  border: 1px dashed #c084fc;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.offers-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6b21a8;
+  margin-bottom: 12px;
+}
+
+.offers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.offer-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ebd5ff;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.offer-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-code {
+  font-size: 14px;
+  font-weight: 800;
+  color: #7c3aed;
+}
+
+.offer-desc {
+  font-size: 12px;
+  color: #706380;
+  margin-top: 1px;
+}
+
+.offer-apply-btn {
+  background: none;
+  border: none;
+  color: #7c3aed;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Summary Card Right */
+.cart-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.summary-card {
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.summary-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #55524f;
+}
+
+.summary-row.total {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  border-top: 1px solid #eedfd3;
+  padding-top: 14px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.btn-checkout {
+  width: 100%;
+  background: var(--rainbow-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Nutrition Summary Card */
+.nutrition-card {
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.nutrition-card-header {
+  font-size: 11px;
+  font-weight: 800;
+  color: #706865;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.nutrition-calories-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.nutrition-calories-val {
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+}
+
+.nutrition-progress-item {
+  margin-bottom: 14px;
+}
+
+.nutrition-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #55524f;
+}
+
+.nutrition-progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: #f3eae4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nutrition-progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.nutrition-progress-bar-fill.protein {
+  background: #ef4444;
+}
+
+.nutrition-progress-bar-fill.carbs {
+  background: #f97316;
+}
+
+.nutrition-progress-bar-fill.fats {
+  background: #ec4899;
+}
+
+/* Empty State / Standard Buttons */
+.btn-clear-cart {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #e11d48;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-clear-cart:hover {
+  background: #ffe4e6;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border: var(--card-border);
+  border-radius: 16px;
+  color: #6e6b68;
+}
+
+/* Scrollbar customization */
+.offers-list::-webkit-scrollbar {
+  width: 4px;
+}
+.offers-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+}
+.offers-list::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+  border-radius: 2px;
+}
