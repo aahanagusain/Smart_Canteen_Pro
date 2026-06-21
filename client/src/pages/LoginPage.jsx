@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../lib/api'
+import { Button, Input } from '../components/ui'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -70,11 +71,11 @@ export default function LoginPage() {
         <form onSubmit={onSubmit}>
           {isRegister && (
             <div className="form-group">
-              <label htmlFor="fullName">Full Name</label>
-              <input
+              <Input
                 id="fullName"
+                label="Full Name"
                 type="text"
-                className="login-input"
+                variant="login"
                 value={fullName}
                 onChange={handleInputChange(setFullName)}
                 placeholder="Enter your name"
@@ -84,11 +85,11 @@ export default function LoginPage() {
           )}
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
+            <Input
               id="email"
+              label="Email"
               type="email"
-              className="login-input"
+              variant="login"
               value={email}
               onChange={handleInputChange(setEmail)}
               placeholder="name@domain.com"
@@ -97,11 +98,11 @@ export default function LoginPage() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
+            <Input
               id="password"
+              label="Password"
               type="password"
-              className="login-input"
+              variant="login"
               value={password}
               onChange={handleInputChange(setPassword)}
               placeholder="••••••••"
@@ -111,9 +112,9 @@ export default function LoginPage() {
 
           {error && <div className="login-error">{error}</div>}
 
-          <button className="btn-rainbow" type="submit" disabled={loading}>
+          <Button type="submit" variant="primary" fullWidth disabled={loading}>
             {loading ? 'Please wait...' : isRegister ? 'Sign up' : 'Login'}
-          </button>
+          </Button>
         </form>
 
         <div className="login-toggle">

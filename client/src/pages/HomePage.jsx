@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../lib/api'
 import { useCart } from '../context/CartContext'
+import { Loader } from '../components/ui'
 
 export default function HomePage() {
   const [restaurants, setRestaurants] = useState([])
@@ -43,7 +44,9 @@ export default function HomePage() {
             <p className="home-subtitle">Namaste, {userName}! Explore top Indian restaurants.</p>
           </div>
           <div className="header-buttons">
-            <button className="btn-secondary">Profile</button>
+            <Link className="btn-secondary" to="/components-demo" style={{ display: 'inline-flex', alignItems: 'center' }}>
+              UI Demo
+            </Link>
             <Link className="btn-cart-badge" to="/cart">
               Cart ({totalItems})
             </Link>
@@ -55,7 +58,7 @@ export default function HomePage() {
       </header>
 
       {/* Loading & Error States */}
-      {loading ? <p style={{ textAlign: 'center', fontSize: 16 }}>Loading restaurants...</p> : null}
+      {loading ? <Loader text="Loading restaurants..." /> : null}
       {error ? <p style={{ color: '#dc2626', textAlign: 'center' }}>{error}</p> : null}
 
       {/* Restaurant Cards Grid */}
